@@ -1,0 +1,54 @@
+<h1>SIGN UP</h1>
+<mat-card>
+  <form action="" [formGroup]="signupForm" (ngSubmit)="signup()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="nombre"
+        placeholder="Nombre"
+      />
+
+      <mat-error *ngIf="campoValido('nombre')"
+        >El nombre debe de tener un minimo de 3 caracteres</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+      matInput
+      type="email"
+      formControlName="email"
+       placeholder="E-mail" />
+       <mat-error *ngIf="campoValido('email')"
+       >Lo ingresado debe de ser un email valido</mat-error
+     >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Password" />
+      <mat-error *ngIf="campoValido('password')"
+        >El passowrd es obligatorio y/o debe de tener un minimo de 5 caracteres</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+      type="password"
+      formControlName="password2"
+      placeholder="Confirm password" />
+
+      <mat-error *ngIf="validarPassword()"
+        >Las contraseñas no son iguales</mat-error
+      >
+    </mat-form-field>
+    <mat-checkbox
+    formControlName="terminos"
+    >Terminos y Condiciones</mat-checkbox>
+    <mat-error *ngIf="validarTerminos()"
+    >Debe de aceptar los terminos y condiciones</mat-error
+  >
+    <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid" >Login</button>
+  </form>
+</mat-card>

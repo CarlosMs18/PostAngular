@@ -1,0 +1,18 @@
+mat-form-field,
+mat-checkbox,
+textArea{
+  width : 100%;
+
+}
+
+mat-spinner{
+  margin : auto;
+}
+
+button{
+  margin-top : 1rem;
+}
+
+h1{
+  text-align: center;
+}

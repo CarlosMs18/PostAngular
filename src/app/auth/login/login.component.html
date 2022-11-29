@@ -1,0 +1,32 @@
+<h1>SIGN UP</h1>
+<mat-card>
+  <form action="" [formGroup]="loginForm" (submit)="login()" >
+
+    <mat-form-field>
+      <input
+      matInput
+      type="email"
+      formControlName="email"
+       placeholder="E-mail" />
+       <mat-error *ngIf="campoValido('email')"
+       >Lo ingresado debe de ser un email valido</mat-error
+     >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Password" />
+      <mat-error *ngIf="campoValido('password')"
+        >El passowrd es obligatorio</mat-error
+      >
+    </mat-form-field>
+
+    <mat-checkbox
+    formControlName="recordar"
+    >Recordarme</mat-checkbox>
+
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </form>
+</mat-card>
